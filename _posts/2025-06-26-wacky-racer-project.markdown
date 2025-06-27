@@ -21,7 +21,7 @@ students compete in teams of four to design, assemble and program a remote contr
 The car must be controlled by an accelerometer which the 'driver' wears on their head.
 Both the car and the hat must have certain components, including a SAM4s ARM microcontroller. 
 
-![system diagram](/media/wacky_racer/wackyRacersSystemDiagram.png)
+![system diagram]({{ site.baseurl }}/media/wacky_racer/wackyRacersSystemDiagram.png)
    
 {% comment %} success criteria {% endcomment %}  
 A competition is held at the end of the semmester where the cars must compete to score the most laps within a given time frame.
@@ -30,7 +30,7 @@ Bonus marks are awarded for 'dastardly features' which can be used to disable op
 ## Design
 
 # Schematic
-I designed the embedded system for the hat, which is shown in the [schematics](/media/wacky_racer/hat-schematic.pdf) below. 
+I designed the embedded system for the hat, which is shown in the [schematics]({{ site.baseurl }}/media/wacky_racer/hat-schematic.pdf) below. 
 
 - component detail
 - design considerations.

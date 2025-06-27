@@ -51,6 +51,10 @@ main {
   max-width: $content-width;
   margin: 0 auto;
 }
+
+img {
+  max-width: 100%;
+}
 time {
   color: #898989;
 }
