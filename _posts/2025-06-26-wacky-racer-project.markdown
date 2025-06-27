@@ -35,7 +35,7 @@ I designed the embedded system for the hat, which is shown in the [schematics](/
 - component detail
 - design considerations.
 
-![hat schematic page 1]({{ site.baseur }}/media/wacky_racer/hat-schematic-page-1.png)
+![hat schematic page 1]({{ site.baseurl }}/media/wacky_racer/hat-schematic-page-1.png)
 ![car schematic page 2](/media/wacky_racer/hat-schematic-page-2.png)
 
 # PCB
