@@ -36,16 +36,16 @@ I designed the embedded system for the hat, which is shown in the [schematics](/
 - design considerations.
 
 ![hat schematic page 1]({{ site.baseurl }}/media/wacky_racer/hat-schematic-page-1.png)
-![car schematic page 2](/media/wacky_racer/hat-schematic-page-2.png)
+![car schematic page 2]({{ site.baseurl }}/media/wacky_racer/hat-schematic-page-2.png)
 
 # PCB
 The circuit board was designed in altium, and then we assembled the PCBs using pick and place machines. 
 We tried for a very compact layout, which did end up causing issues during debugging.
 
-![car pcb layout](/media/wacky_racer/car-pcb-layout.png){: width="50%"}
+![car pcb layout]({{ site.baseurl }}/media/wacky_racer/car-pcb-layout.png){: width="50%"}
 
-![car pcb](/media/wacky_racer/car-pcb.jpg){: height="600"}
-![hat pcb](/media/wacky_racer/hat-pcb.jpg){: height="600" }
+![car pcb]({{ site.baseurl }}/media/wacky_racer/car-pcb.jpg){: height="600"}
+![hat pcb]({{ site.baseurl }}/media/wacky_racer/hat-pcb.jpg){: height="600" }
 
 # Software
 For the software, I implemented a real time task scheduler using the [RIOS](https://www.cs.ucr.edu/~vahid/rios/) system. This handy bit of code provides a great template for non-preemptive task-scheduling in pure C.
@@ -57,11 +57,11 @@ But if it aint broke don't fix it, so we left ours in the stock configuration to
 
 Our team drew inspiration from Monty Python's 'The Holy Grail'. So naturally, our car was modelled after the fearsome [Rabbit of Caerbannog](https://en.wikipedia.org/wiki/Rabbit_of_Caerbannog). One 3D printed rabbit's head later, and we were sure to crush our foes.
 
-![finished rabbit](/media/wacky_racer/car.jpg)
+![finished rabbit]({{ site.baseurl }}/media/wacky_racer/car.jpg)
 
 For the controller - Arthur's crown, naturally - we laser cut some ribs and glued them onto a beanie. I wish I had an image of it with the LEDs on, but you'll have to trust that it was suitably majestic.
 
-![arthurs crown](/media/wacky_racer/arthurs-crown.jpg)
+![arthurs crown]({{ site.baseurl }}/media/wacky_racer/arthurs-crown.jpg)
 
 
 ## Results
