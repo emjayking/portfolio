@@ -35,7 +35,7 @@ I designed the embedded system for the hat, which is shown in the [schematics](/
 - component detail
 - design considerations.
 
-![hat schematic page 1](/media/wacky_racer/hat-schematic-page-1.png)
+![hat schematic page 1]({{ site.baseur }}/media/wacky_racer/hat-schematic-page-1.png)
 ![car schematic page 2](/media/wacky_racer/hat-schematic-page-2.png)
 
 # PCB
@@ -49,7 +49,7 @@ We tried for a very compact layout, which did end up causing issues during debug
 
 # Software
 For the software, I implemented a real time task scheduler using the [RIOS](https://www.cs.ucr.edu/~vahid/rios/) system. This handy bit of code provides a great template for non-preemptive task-scheduling in pure C.
-
+https://emjayking.github.io/portfolio/
 # Mechanical
 Each team was given a base 'tank' to modify as they saw fit. 
 But if it aint broke don't fix it, so we left ours in the stock configuration to focus on what truly mattered
