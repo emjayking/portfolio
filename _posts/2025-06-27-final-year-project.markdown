@@ -99,8 +99,27 @@ I used vacuum forming to create a close fitting shell around the pcb, and sealed
 
 # Results
 
-## Inductive Coil Testing
+Throughout the design, we used iterative testing to inform and validate our decisions.
 
-## Wireless testing
+## Inductive Coil Testing
+The inductive power system was purchased off-the-shelf, but the claimed [11~60mm of range](https://www.dfrobot.com/blog-1579.html) seemed dubious (spoiler, it was).
+
+To characterise the performance, I designed and assembled a test-jig that would let us precisely control the coil spacing. I then tested the system's performance using a programmable power-supply and an electronic load, to control each variable. This is important because the efficiency of an inductive circuit depends on the IV (current/voltage) of both the load and supply.
+
+![test jig]({{ site.baseurl }}/media/fyp/inductive-test-jig.jpg)
+
+My results found that the coils could only provide our required 10-Watts of power when operating at 25V supply, drawing 1.5A at 12mm spacing. We were unable to achieve the advertised 25W, even when operating significantly above the recomended ratings. Notably, there is room for further testing with higher load current at longer ranges, but we did not test further as we met our target power requirement.
+
+![inductive results]({{ site.baseurl }}/media/fyp/inductive-charging-data.png)
+
+## Climb testing
+
+Once the robot's drive mechanism was finished, we wished to validate the motor's performance. We mounted a mooring line from the workshop crane, and attached a counter-weight to the robot to mimic neutral bouyancy. The test was a success, and the workshop technicians were kind enough to take a photo of us.
+
+![crane photo]({{ site.baseurl }}/media/fyp/cranePhoto.jpg)
 
 ## Underwater test
+
+Bouyed by our success (pun intended), we tested the robot at a local swimming pool. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1zTDcDDNlZo?si=2geeTVZHhjMmwilL;&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
