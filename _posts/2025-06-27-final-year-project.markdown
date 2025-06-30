@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Final Year Project"
+title:  "Final Year Project: Autonomous Underwater Robot"
 date:   2025-06-27 13:00:00 +1200
-categories: course embedded-systems mechatronics
+categories: course mechatronics 
 ---
 <!-- photo of crawler and deployment -->
 

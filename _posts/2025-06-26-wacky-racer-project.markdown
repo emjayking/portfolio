@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Wacky Racer Project"
+title:  "Wacky Racer Project: Remote-Controlled Car"
 date:   2025-06-26 11:19:42 +1200
 categories: course embedded-systems
 ---
