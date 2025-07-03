@@ -3,6 +3,12 @@ layout: default
 ---
 
 <h2>Projects</h2>
+<p> Quick Disclaimer: This site is still a work in progress. 
+	I ask you to please excuse my incomplete writing. 
+	I've focused on adding images and pages to show my work instead of refining the written content.
+	There should be enough to understand the photos, but I wouldn't expect much else.
+	I'll update this disclaimer when I've finished refining each page.
+</p>
 {% for post in site.posts %}
 		<time>{{ post.date | date: "%b %-d, %Y" }}</time>
 		<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
