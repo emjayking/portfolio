@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "Computer Vision: Line-Following Robot"
+title:  "Line-Following Robot"
 date:   2025-06-30 13:00:00 +1200
 categories: course computer-vision
+thumbnail: "media/line-following-robot/race-car.jpg"
 ---
 
 # Project Outline

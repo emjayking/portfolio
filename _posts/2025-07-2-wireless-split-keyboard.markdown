@@ -2,7 +2,8 @@
 layout: post
 title:  "Wireless Split Keyboard"
 date:   2025-07-01 13:00:00 +1200
-categories: work autonomous-vehicles
+categories: personal CAD
+thumbnail: "media/split-keyboard/completed-keyboard.png"
 ---
 
 # Overview

@@ -10,7 +10,20 @@ layout: default
 	I'll update this disclaimer when I've finished refining each page.
 </p>
 {% for post in site.posts %}
-		<time>{{ post.date | date: "%b %-d, %Y" }}</time>
-		<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+		<div class="project-box">
+		<a href="{{ post.url | prepend: site.baseurl }}">
+			<!-- <time>{{ post.date | date: "%b %-d, %Y" }}</time> -->
+			{% if post.thumbnail %}
+			<img src="{{ site.url }}/{{ post.thumbnail }}" alt="thumbnail" class="thumbnail">
+			{% endif %}
+
+			<h3>{{ post.title }}</h3>
+		</a>
+			<div class="tag-banner">
+				{% for tag in post.categories %}
+				<span class="tag">{{ tag }}</span>
+				{% endfor %}
+			</div>
+		</div>
 {% endfor %}
 

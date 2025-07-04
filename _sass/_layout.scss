@@ -109,6 +109,35 @@ aside {
     }
   }
 }
+
+// Layouts for project divs
+.project-box {
+  border-style: solid;
+  border-color: gray;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+
+  padding-bottom: 10px;
+
+  .thumbnail {
+    max-height: 200px;
+  }
+
+  .tag-banner {
+    width: 100%;
+    align-items: center;
+    margin: auto;
+
+      .tag {
+    background-color: #4dffa6;
+    border-radius: 10px;
+    // float: left;
+    padding: 10px;
+    }
+  }
+}
+
 footer {
   text-align: center;
   padding: 40px;

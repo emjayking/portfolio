@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "Final Year Project: Autonomous Underwater Robot"
+title:  "Autonomous Underwater Robot"
 date:   2025-06-27 13:00:00 +1200
 categories: course mechatronics 
+thumbnail: "media/fyp/annotated-crawler.png" 
 ---
 <!-- photo of crawler and deployment -->
 
