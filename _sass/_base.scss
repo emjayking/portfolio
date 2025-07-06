@@ -1,13 +1,21 @@
 $content-width: 800px;
-$main: #19ccaa;
+// $main: #19ccaa;
 $font-style: 'Open Sans', sans-serif;
-$font-color: #262626;
-$link-color: #425469;
-$link-hover-color: $main;
+$font-color: #ffff;
+// $link-color: #425469;
+// $link-hover-color: $main;
 $heading-font: 'Multi', sans-serif;
-$heading-font-color: #425469;
-$light: #e7edf4;
-$header: #1d1425;
+// $heading-font-color: #425469;
+// $light: #e7edf4;
+// $header: #1d1425;
+
+$base: #000000;
+$first-layer: #262626;
+$second-layer: #404040;
+$third-layer: #666666;
+$highlights: #884EAE;
+$accent: #cc01d7;
+
 
 *,
 *::before,
