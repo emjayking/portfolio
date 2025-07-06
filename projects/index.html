@@ -9,16 +9,22 @@ layout: default
 	There should be enough to understand the photos, but I wouldn't expect much else.
 	I'll update this disclaimer when I've finished refining each page.
 </p>
+<div class="projects-grid">
 {% for post in site.posts %}
 		<div class="project-box">
-		<a href="{{ post.url | prepend: site.baseurl }}">
-			<!-- <time>{{ post.date | date: "%b %-d, %Y" }}</time> -->
-			{% if post.thumbnail %}
-			<img src="{{ site.baseurl }}/{{ post.thumbnail }}" alt="thumbnail" class="thumbnail">
-			{% endif %}
-
-			<h3>{{ post.title }}</h3>
-		</a>
+			<div>
+				{% if post.thumbnail %}
+				<img src="{{ site.baseurl }}/{{ post.thumbnail }}" alt="thumbnail" class="thumbnail">
+				{% endif %}
+			</div>
+				
+			<div>
+				<a href="{{ post.url | prepend: site.baseurl }}">
+				<!-- <time>{{ post.date | date: "%b %-d, %Y" }}</time> -->
+					<h3>{{ post.title }}</h3>
+				</a>
+			</div>
+			
 			<div class="tag-banner">
 				{% for tag in post.categories %}
 				<span class="tag">{{ tag }}</span>
@@ -26,4 +32,5 @@ layout: default
 			</div>
 		</div>
 {% endfor %}
+</div>
 

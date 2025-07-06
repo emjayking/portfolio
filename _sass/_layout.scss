@@ -125,35 +125,57 @@ aside {
 }
 
 // Layouts for project divs
+.projects-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 2%;
+  row-gap: 2%;
+}
+
 .project-box {
   border-style: ridge;
   border-color: $third-layer;
   background-color: $second-layer;
   border-radius: 10px;
-  margin-bottom: 10px;
   text-align: center;
-
   padding-bottom: 10px;
+  max-height: 400px;
+  
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 66% auto auto;
 
   .thumbnail {
-    max-height: 200px;
+    border-radius: 10px;
+    max-height: 100%;
   }
 
-  .tag-banner {
-    width: 100%;
-    align-items: center;
-    margin: auto;
-
-      .tag {
+  .tag {
     background-color: $highlights;
     border-radius: 10px;
     // float: left;
     padding: 10px;
-    }
   }
 
-  h3 {
-    color: $accent;
+  .module h3 {
+    font-size: 1em;
+    color: $highlights;
+    container-name: test;
+    container-type: inline-size;
+  }
+
+  h3:hover {
+    color:$accent;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+@container test (width < 500px) {
+  .module h3 {
+    font-size: 2em;
   }
 }
 

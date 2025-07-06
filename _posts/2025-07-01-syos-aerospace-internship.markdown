@@ -3,6 +3,7 @@ layout: post
 title:  "Syos Aerospace: Mechatronics Internship"
 date:   2025-07-01 13:00:00 +1200
 categories: work autonomous-vehicles
+thumbnail: "media/syos-aerospace/drone-demo.jpeg"
 ---
 
 # Overview
