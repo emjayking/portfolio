@@ -14,7 +14,7 @@ layout: default
 		<a href="{{ post.url | prepend: site.baseurl }}">
 			<!-- <time>{{ post.date | date: "%b %-d, %Y" }}</time> -->
 			{% if post.thumbnail %}
-			<img src="{{ site.url }}/{{ post.thumbnail }}" alt="thumbnail" class="thumbnail">
+			<img src="{{ site.baseurl }}/{{ post.thumbnail }}" alt="thumbnail" class="thumbnail">
 			{% endif %}
 
 			<h3>{{ post.title }}</h3>
