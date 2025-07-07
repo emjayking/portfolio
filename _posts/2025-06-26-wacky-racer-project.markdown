@@ -5,6 +5,12 @@ date:   2025-06-26 11:19:42 +1200
 categories: course embedded-systems
 thumbnail: "media/wacky_racer/car.jpg"
 ---
+<div class="work-in-progress">
+    <p>
+    Hello, <br> the content on this page is still work in progress. Please excuse the poor writing and unformatted images.  <br>
+    - Matthew
+    </p>
+</div>
 
 ## Project Outline
 

@@ -5,6 +5,12 @@ date:   2025-07-01 13:00:00 +1200
 categories: personal CAD
 thumbnail: "media/split-keyboard/completed-keyboard.png"
 ---
+<div class="work-in-progress">
+    <p>
+    Hello, <br> the content on this page is still work in progress. Please excuse the poor writing and unformatted images.  <br>
+    - Matthew
+    </p>
+</div>
 
 # Overview
 I assembled my own wireless corne keyboard using a premade pcb and a custom 3D printed case.

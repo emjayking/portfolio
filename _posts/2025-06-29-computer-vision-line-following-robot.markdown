@@ -5,6 +5,12 @@ date:   2025-06-30 13:00:00 +1200
 categories: course computer-vision
 thumbnail: "media/line-following-robot/race-car.jpg"
 ---
+<div class="work-in-progress">
+    <p>
+    Hello, <br> the content on this page is still work in progress. Please excuse the poor writing and unformatted images.  <br>
+    - Matthew
+    </p>
+</div>
 
 # Project Outline
 - what was done 

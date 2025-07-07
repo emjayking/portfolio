@@ -5,6 +5,12 @@ date:   2025-07-01 13:00:00 +1200
 categories: work autonomous-vehicles
 thumbnail: "media/syos-aerospace/drone-demo.jpeg"
 ---
+<div class="work-in-progress">
+    <p>
+    Hello, <br> the content on this page is still work in progress. Please excuse the poor writing and unformatted images.  <br>
+    - Matthew
+    </p>
+</div>
 
 # Overview
 I spent the summer of 2024-2025 working as a mechatronics intern at [Syos Aerospace](https://syos-aerospace.com/). My responsibilities included writing software, assembling prototypes, and assisting with test flights.

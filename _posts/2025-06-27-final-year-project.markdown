@@ -7,6 +7,12 @@ thumbnail: "media/fyp/annotated-crawler.png"
 ---
 <!-- photo of crawler and deployment -->
 
+<div class="work-in-progress">
+    <p>
+    Hello, <br> the content on this page is still work in progress. Please excuse the poor writing and unformatted images.  <br>
+    - Matthew
+    </p>
+</div>
 # Project Outline
 - What was done
     - Designed prototype underwater robot alternative to traditional distributed sensor installations.
@@ -60,18 +66,24 @@ In the spirit of brevity I've only detailed my own contributions below, but our 
 
 ![System Diagram]({{ site.baseurl }}/media/fyp/fyp-system-diagram.png)
 
-![Annotated design]({{ site.baseurl }}/media/fyp/annotated-crawler.png)
-![underwater deployment]({{ site.baseurl }}/media/fyp/underwater-deployment.png)
+<!-- ![Annotated design]({{ site.baseurl }}/media/fyp/annotated-crawler.png)
+![underwater deployment]({{ site.baseurl }}/media/fyp/underwater-deployment.png) -->
+
+<div style="display: grid; grid-template-columns: auto auto; grid-template-rows: minmax(auto, 300px); justify-content: center;">
+    <img src="{{ site.baseurl }}/media/fyp/annotated-crawler.png" alt="annotated-robot" style="max-height: 100%;">
+    <img src="{{ site.baseurl }}/media/fyp/underwater-deployment.png"
+    alt="underwater-deployment" style="max-height: 100%;">
+</div>
 
 ## charging Module
 
 We decided to use a wireless charger to transfer power from the buoy to the robot, trading efficiency for mechanical complexity. 
 The idea was to use inductive coils for recharging, similar to wireless phone rechargers.
 
-![inductive concept]({{ site.baseurl }}/media/fyp/inductive-charger-concept.png)
 
-![completed modules]({{ site.baseurl }}/media/fyp/completed-modules.jpg)
+<!-- ![inductive concept]({{ site.baseurl }}/media/fyp/inductive-charger-concept.png)
 
+![completed modules]({{ site.baseurl }}/media/fyp/completed-modules.jpg) -->
 
 The inductive coils and electronics were purchased online, and I did several [tests](#inductive-coil-testing) to characterise their performance.
 I encased the coils in resin to waterproof them. I tried using a vacuum chamber to remove air from the resin, but I suspect the resin had too little viscosity. In the end the resin ended up boiling and producing a poor finish.
