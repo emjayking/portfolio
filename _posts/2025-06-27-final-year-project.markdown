@@ -9,36 +9,56 @@ thumbnail: "media/fyp/annotated-crawler.png"
 
 # Project Outline
 - What was done
+    - Designed prototype underwater robot alternative to traditional distributed sensor installations.
+    - Personally involved with wireless charging, temperature sensor, and wireless communication.
+    - Project created a proof of concept, and was renewed this year to create a second prototype and further refine the product.
 - What was learned
+    - Gained experience with micropython, rs232, stm32s, bluetooth, and real-time operating systems.
+    - Learned to design components for vacuum forming.
+    - Gained experience with project lifecycle, going through design, assembly, testing, reflecting, and preparing for the next iteration. 
 
 # Introduction
+
 <!-- - background information -->
-uc students do a final year project to earn their honors degree.
-usually sponsored by external companies to provide industry experience.
-projects done in teams of four, usually with students from different specialisations.
+At The University of Canterbury, engineering students complete a final year project to earn their honors degree.
+These are usually sponsored by external companies looking to screen for graduate roles and provide students with professional experience.
+Projects are completed in teams of four, ideally from a mix of specialisations, and report to both a project supervisor from the university and their commercial client.
 
 <!-- - problem statement -->
-cawthron (link) deploys fixed sensor installations for commercial environmental monitoring. 
-The most expensive component of these installations are the sensors, because of their  niche market and high callibration costs.
-cawthron asked us to design a robot to move the sensors vertically within a water column to reduce the number of sensors needed.
-
- <!-- photo of existing installation? -->
+During my internship at the [Cawthron Institute](https://www.cawthron.org.nz/), I convinced the company to sponsor a final year project. 
+My supervisor at the time, Paul, had the idea to develop an underwater robot for sensor deployments.
+Currently, Cawthron uses distributed sensor deployments to get water-column data.
+These lines of sensors are extremely costly due to individual sensor purchase and recalibration costs.
+They also must be reconfigured for each deployment, limiting their flexibility.
+There are existing [commercial solutions](https://mclanelabs.com/prawler-videos/), but these are either too expensive, too slow, or otherwise unsuited for Cawthron's operations.
+Cawthrons hoped the robot would provide a lower cost alternative (salinity sensors can cost up to $10,000 each), allowing them to sell to smaller marine industries who perhaps were not able to justify the cost.
 
 <!-- - success criteria -->
-The aim was to match the capabilities of cawthron's existing installations. This requires travelling 30 metres deep, surviving for 12 months, and providing a reading at  500mm intervals every hour. 
+<!-- The aim was to match the capabilities of cawthron's existing installations. This requires travelling 30 metres deep, surviving for 12 months, and providing a reading at  500mm intervals every hour.  -->
+The team was selected by Cawthron, with two mechanical and two mechatronics engineers - myself included.
+Our goals were based around the capabilities of Cawthron's existing distributed sensor installations:
+<ul>
+    <li>Hourly samples</li>
+    <li>Depth resolution ≤ 1m</li>
+    <li>Depth rating ≥ 30m</li>
+    <li>Year-long deployment time</li>
+    <li>Remote data transmission</li>
+</ul>
 
 <!-- - scope -->
-cawthron already had several components that we could adapt for our use case. 
-Their buoy could be repurposed to mount the mooring line, provide solar power, and send radio signals to shore. 
-Our project only needed to design the robot's movement and buoy interface system.
-The robots microcontroller and battery management system were also repurposed from cawthron's existing products, so we only had to design the peripherals to implenent each requirement.
+Cawthron provided most of the electrical components from their existing products to adapt to our needs.
+The main microcontroller, battery management system, and pressure sensor were provided, leaving us to design the recharging, communictions, and movement systems before encasing them in a chasis and writing an operating system.
+One of Cawthrons buoys would be repurposed to mount the mooring line, provide solar power, and send radio signals to shore. 
+This meant the recharging and communications system would only have to connect the robot to the buoy.
 
 <!-- - milestones -->
 We split the project into milestones to divide the workload between myself and my teammates. 
-I focused on recharging the robot, sending data to the buoy, and the sensor system.
+The mechanical engineers focused on the chassis, movement system and motor enclosure, whilst myself and the other mechatronics engineer designed the recharging, communications, and software components.
+In the spirit of brevity I've only detailed my own contributions below, but our full <del>64 page!</del> [report is available]({{ site.baseurl }}/media/fyp/End Of Year Report.pdf) if you would like to see our collected efforts.
 
 # Design
-- Explanation of current design
+
+![System Diagram]({{ site.baseurl }}/media/fyp/fyp-system-diagram.png)
 
 ![Annotated design]({{ site.baseurl }}/media/fyp/annotated-crawler.png)
 ![underwater deployment]({{ site.baseurl }}/media/fyp/underwater-deployment.png)
