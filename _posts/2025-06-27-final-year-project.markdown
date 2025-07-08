@@ -7,21 +7,23 @@ thumbnail: "media/fyp/annotated-crawler.png"
 ---
 <!-- photo of crawler and deployment -->
 
-<div class="work-in-progress">
+<!-- <div class="work-in-progress">
     <p>
     Hello, <br> the content on this page is still work in progress. Please excuse the poor writing and unformatted images.  <br>
     - Matthew
     </p>
-</div>
+</div> -->
+
 # Project Outline
-- What was done
-    - Designed prototype underwater robot alternative to traditional distributed sensor installations.
-    - Personally involved with wireless charging, temperature sensor, and wireless communication.
-    - Project created a proof of concept, and was renewed this year to create a second prototype and further refine the product.
-- What was learned
-    - Gained experience with micropython, rs232, stm32s, bluetooth, and real-time operating systems.
-    - Learned to design components for vacuum forming.
-    - Gained experience with project lifecycle, going through design, assembly, testing, reflecting, and preparing for the next iteration. 
+
+Working in a team of four, I designed, assembled, and tested an underwater robot.
+The client, Cawthron, wanted the robot to be a low cost alternative to fixed sensor installations.
+I was specifically responsible for designing the wireless charging, communication, and temperature sensing systems.
+The project ended with a finished proof of concept vehicle, which demonstrated enough success for the project to be renewed in 2025.
+
+From the experience, I learned to use RS232, STM32s, Bluetooth, and Micropython.
+Creating a water-proof temperature sensor gave me practical experience designing moulds for vacuum-forming.
+The project completed a full development cycle, through design, assembly, testing, and documenting results for the next iteration.
 
 # Introduction
 
@@ -60,99 +62,155 @@ This meant the recharging and communications system would only have to connect t
 <!-- - milestones -->
 We split the project into milestones to divide the workload between myself and my teammates. 
 The mechanical engineers focused on the chassis, movement system and motor enclosure, whilst myself and the other mechatronics engineer designed the recharging, communications, and software components.
-In the spirit of brevity I've only detailed my own contributions below, but our full <del>64 page!</del> [report is available]({{ site.baseurl }}/media/fyp/End Of Year Report.pdf) if you would like to see our collected efforts.
+In the spirit of brevity I've only detailed my own contributions below, but the full <del>64 page!</del> [report is available]({{ site.baseurl }}/media/fyp/End Of Year Report.pdf) if you would like to see our collected efforts.
+
+![System Diagram]({{ site.baseurl }}/media/fyp/fyp-system-diagram.png)
+<figcaption>A high-level system diagram, required components are colored <span class="purple"> purple</span>. </figcaption>
 
 # Design
 
-![System Diagram]({{ site.baseurl }}/media/fyp/fyp-system-diagram.png)
-
-<!-- ![Annotated design]({{ site.baseurl }}/media/fyp/annotated-crawler.png)
-![underwater deployment]({{ site.baseurl }}/media/fyp/underwater-deployment.png) -->
+We had created a working prototype by the end of the year. 
+This prototype could move along the mooring cable, recharge wirelessly, and send sensor readings via bluetooth. 
 
 <div style="display: grid; grid-template-columns: auto auto; grid-template-rows: minmax(auto, 300px); justify-content: center;">
     <img src="{{ site.baseurl }}/media/fyp/annotated-crawler.png" alt="annotated-robot" style="max-height: 100%;">
     <img src="{{ site.baseurl }}/media/fyp/underwater-deployment.png"
     alt="underwater-deployment" style="max-height: 100%;">
 </div>
+<figcaption>The completed robot (left) and a deployment in a local swimming pool (right).</figcaption>
 
-## charging Module
+## Charging Module
 
 We decided to use a wireless charger to transfer power from the buoy to the robot, trading efficiency for mechanical complexity. 
-The idea was to use inductive coils for recharging, similar to wireless phone rechargers.
+The idea was to use inductive coils for recharging, similar to wireless phone rechargers. 
+I designed the charging plates to keep the coils parallel, and at the [most efficient distance](#inductive-coil-testing) for power transfer.
+The housing components are made by [Blue Robotics](https://bluerobotics.com/),  which have a great range of marine robotics components.
 
 
-<!-- ![inductive concept]({{ site.baseurl }}/media/fyp/inductive-charger-concept.png)
+<img src="{{ site.baseurl }}/media/fyp/inductive-charger-concept.png" 
+    alt="concept design"
+    style="display:block; max-width: 70%; margin: auto;">
+<figcaption>Concept design for the inductive charging module</figcaption>
 
-![completed modules]({{ site.baseurl }}/media/fyp/completed-modules.jpg) -->
+I encased the coils in resin to waterproof them. 
+There were concerns about the air-bubbles in the resin causing fatigue cracking over time, similar to Ocean's-Gate. 
+To mitigate this, I tried removing the air bubbles by placing the resin inside a vacuum chamber whilst it cured, similar to how carbon composites are made.
+This did not work, the resin ended up 'boiling' over, probably because the viscosity was too high.
 
-The inductive coils and electronics were purchased online, and I did several [tests](#inductive-coil-testing) to characterise their performance.
-I encased the coils in resin to waterproof them. I tried using a vacuum chamber to remove air from the resin, but I suspect the resin had too little viscosity. In the end the resin ended up boiling and producing a poor finish.
+<img src="{{ site.baseurl }}/media/fyp/resin-boiling.png"
+    alt="resin-boiling"
+    style="display:block; max-width: 70%; margin: auto;">
+<figcaption>Resin boiling in the vacuum chamber</figcaption>
 
-- copperfill pla
+[Biofouling](https://en.wikipedia.org/wiki/Biofouling) is a major concern for all marine vessels.
+Traditional anti-biofouling methods use copper-based paint, because it releases biocidal Cu<sup>2+</sup> cations into the water.
+Cawthron had been experimenting with [CopperFil PLA](https://colorfabb.com/copperfill) which has enough copper in to provide the same effect.
+I decided to use this on the mating features of the charger to prevent biofouling from covering the charger.
 
-![resin boiling in the vacuum chamber]({{ site.baseurl }}/media/fyp/resin-boiling.png)
+<img src="{{ site.baseurl }}/media/fyp/completed-coils.png"
+    alt="mating-features"
+    style="display:block; max-width: 70%; margin: auto;">
+<figcaption>Completed mating-features with CopperFil PLA</figcaption>
 
-![coils with mating feature]({{ site.baseurl }}/media/fyp/completed-coils.png)
+The charging module also houses the bluetooth transmitter used to communicate with the buoy.
+Therefore the module needed power and RS232 communication wires.
+To accomodate these requirements we designed a custom PCB with a buck-converter, RS232-UART transciever, and an ESP32 microcontroller.
+The board was also repurposed to [control the motor](#motor-control).
+The [schematic]({{ site.baseurl }}/media/fyp/pcb-schematic.pdf) and layout were done in KiCAD.
 
+<img src="{{ site.baseurl }}/media/fyp/completed-pcbs.jpg"
+    alt="completed-pcbs"
+    style="display:block; max-width: 70%; margin: auto;">
+<figcaption>Completed PCBS (missing buck converters)</figcaption>
 
-To control the charger, we designed a custom pcb. This circuit would control when the charger was turned on, and allow the robot to communicate with the buoy via bluetooth. The board was also repurposed to [control the motor](#motor-control). The [schematic]({{ site.baseurl }}/media/fyp/pcb-schematic.pdf) and layout were done in KiCAD.
+<img src="{{ site.baseurl }}/media/fyp/completed-modules.jpg"
+    alt="completed modules"
+    style="display:block; max-width: 70%; margin: auto;">
+<figcaption> Completed power transmitter and reciever </figcaption>
 
-- technical details
-    - microcontroller choice
-    - communication protocol
-    - power regulator
+## Wireless Communication
 
-![pcb schematic]({{ site.baseurl }}/media/fyp/pcb-schematic.png)
-
-![completed pcbs]({{ site.baseurl }}/media/fyp/completed-pcbs.jpg)
-
-## wireless communication
-
-The robot sends data to the buoy via bluetooth. Saltwater is a notorioulsy good attenuator for radio signals, but the radios are in the wireless charging modules, so the signal only has to travel around 100mm. The bluetooth communication was tricky, but I succeeded in getting motor control and live sensor readouts for demonstration purposes.
+The robot sends data to the buoy via bluetooth. 
+Saltwater is a notorioulsy good attenuator for radio signals, but the radios are in the wireless charging modules, so the signal only has to travel around 100mm. 
+Learning the bluetooth communication standards was tricky, but I succeeded in getting motor control and live sensor readouts for demonstration purposes.
 
 ## Motor Control
+The mechanical engineers calculated the motor requirements, designed the housing and drive system.
+Us mechatronics engineers were responsible for controlling the motor and providing position feedback.
 
-The motor housing had it's own pcb so that speed, direction, and position feedback could be handled via RS232. 
+The main controller would be responsible for determining the robot's current position using a kalman filter with input from the pressure sensor and motor control board.
+Then, the desired speed would be sent to the motor controller which used feedback from a rotary encoder to provide semi-closed loop control.
+Current draw reports from the <abbr title="Battery Management System">BMS</abbr> would allow the controller to calculate the remaining battery life, and reduce the target speed if required. 
+I think this system would have worked, but unfortunately we ran out of time to implement it. I got the speed control loop working, but we needed more time for the power minimisation system and the position estimator.
 
-![completed motor]({{ site.baseurl }}/media/fyp/motor-pcb.jpg)
+<img src="{{ site.baseurl }}/media/fyp/motor-system.drawio.png"
+    alt="motor control diagram"
+    style="display:block; max-width: 100%; margin: auto;">
+<figcaption> Motor Control Diagram</figcaption>
+
+Installing the motor control board was straightforward, we just mounted it on the back of the motor.
+
+<img src="{{ site.baseurl }}/media/fyp/motor-pcb.jpg"
+    alt="installed motor controlller"
+    style="display:block; max-width: 70%; margin: auto;">
+<figcaption> Installed Motor Controller</figcaption>
 
 ## Temperature sensor
 
-Our robot used two sensors, a pressure sensor for positoning, and a temperature sensor for testing the data logging. 
-When we started the project, the company that supplied most of Cawthron's components, [blue robotics](https://bluerobotics.com/), did not sell a temperature sensor rated for continuous salt-water immersion. I solved this problem by creating my own housing for one of their temperature sensor pcbs.
+Our robot used two sensors, a pressure sensor for positoning, and a temperature sensor as a proof of concept for data-logging. 
+When we started the project, the company that supplied most of Cawthron's components, [Blue Robotics](https://bluerobotics.com/), did not sell a temperature sensor rated for continuous salt-water immersion. 
+I solved this problem by creating my own housing for one of their temperature sensor pcbs.
 
-I used vacuum forming to create a close fitting shell around the pcb, and sealed it into a stainless steel base using silicone. There were also two 3D printed inserts that mated with the base's internal threading to secure the pcb. The vacuum forming tool several iterations to get right, because the part must have the correct height to cross-section ratio to conform along the part's internal corners. The design positions the actual sensor component as close to the salt-water as possible so that it would respond quickly to changes in water temperature.
+<img src="{{ site.baseurl }}/media/fyp/temperature-sensor-iterations.png"
+    alt="Temperature sensor iterations"
+    style="display:block; max-width: 90%; margin: auto;">
+<figcaption> Temperature Sensor Design</figcaption>
 
-- use of internal holes
-- 
+I used vacuum forming to create a close fitting shell around the pcb, and sealed it into a stainless steel base using silicone. 
+There were also two 3D printed inserts that mated with the base's internal threading to secure the pcb.
+The vacuum forming tool several iterations to get right, because the part must have the correct height to cross-section ratio to conform along the part's internal corners. 
+The design positions the actual sensor component as close to the salt-water as possible so that it would respond quickly to changes in water temperature.
 
-![sensor iterations]({{ site.baseurl }}/media/fyp/temperature-sensor-iterations.png)
+<img src="{{ site.baseurl }}/media/fyp/installed-sensor.png"
+    alt="Installed temperature sensor"
+    style="display:block; max-width: 70%; margin: auto;">
+<figcaption> Installed Temperature Sensor</figcaption>
 
-![installed sensor]({{ site.baseurl }}/media/fyp/installed-sensor.png)
-
-# Results
+# Testing
 
 Throughout the design, we used iterative testing to inform and validate our decisions.
 
 ## Inductive Coil Testing
 The inductive power system was purchased off-the-shelf, but the claimed [11~60mm of range](https://www.dfrobot.com/blog-1579.html) seemed dubious (spoiler, it was).
 
-To characterise the performance, I designed and assembled a test-jig that would let us precisely control the coil spacing. I then tested the system's performance using a programmable power-supply and an electronic load, to control each variable. This is important because the efficiency of an inductive circuit depends on the IV (current/voltage) of both the load and supply.
+To characterise the performance, I designed and assembled a test-jig that would let us precisely control the coil spacing. 
+I then tested the system's performance using a programmable power-supply and an electronic load, to control each variable. 
+This is important because the efficiency of an inductive circuit depends on the IV (current/voltage) of both the load and supply.
 
-![test jig]({{ site.baseurl }}/media/fyp/inductive-test-jig.jpg)
+<img src="{{ site.baseurl }}/media/fyp/inductive-test-jig.jpg"
+    alt="test jig"
+    style="display:block; max-width: 70%; margin: auto;">
+<figcaption> Inductor Test Jig</figcaption>
 
-My results found that the coils could only provide our required 10-Watts of power when operating at 25V supply, drawing 1.5A at 12mm spacing. We were unable to achieve the advertised 25W, even when operating significantly above the recomended ratings. Notably, there is room for further testing with higher load current at longer ranges, but we did not test further as we met our target power requirement.
+My results found that the coils could only provide our required 10-Watts of power when operating at 25V supply, drawing 1.5A at 12mm spacing.
+We were unable to achieve the advertised 25W, even when operating significantly above the recomended ratings. 
+Notably, there is room for further testing with higher load current at longer ranges, but we did not test further as we met our target power requirement.
 
-![inductive results]({{ site.baseurl }}/media/fyp/inductive-charging-data.png)
+<img src="{{ site.baseurl }}/media/fyp/inductive-charging-data.png"
+    alt="test results"
+    style="display:block; margin: auto;">
+<figcaption>Test Results</figcaption>
 
 ## Climb testing
 
 Once the robot's drive mechanism was finished, we wished to validate the motor's performance. We mounted a mooring line from the workshop crane, and attached a counter-weight to the robot to mimic neutral bouyancy. The test was a success, and the workshop technicians were kind enough to take a photo of us.
 
-![crane photo]({{ site.baseurl }}/media/fyp/cranePhoto.jpg)
+<img src="{{ site.baseurl }}/media/fyp/cranePhoto.jpg"
+    alt="crane photo"
+    style="display:block; max-width: 70%; margin: auto;">
+<figcaption>The Team With Our Robot</figcaption>
 
 ## Underwater test
 
 Bouyed by our success (pun intended), we tested the robot at a local swimming pool. 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1zTDcDDNlZo?si=2geeTVZHhjMmwilL;&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe  width="560" height="315" src="https://www.youtube.com/embed/1zTDcDDNlZo?si=2geeTVZHhjMmwilL;&mute=1;&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" style="display:block; margin: auto;" allowfullscreen></iframe>

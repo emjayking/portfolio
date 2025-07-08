@@ -189,3 +189,13 @@ footer {
   border-radius: 10px;
   padding: 10px;
 }
+
+figcaption {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.purple {
+  color: $accent;
+}
