@@ -199,3 +199,21 @@ figcaption {
 .purple {
   color: $accent;
 }
+
+#computer-vision-image-grid {
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 1%;
+
+  #areaA {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 1%;
+  }
+
+  #areaB {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 1%;
+  }
+}
