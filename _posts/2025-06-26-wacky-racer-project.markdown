@@ -5,12 +5,6 @@ date:   2025-06-26 11:19:42 +1200
 categories: course embedded-systems
 thumbnail: "media/wacky_racer/car.jpg"
 ---
-<div class="work-in-progress">
-    <p>
-    Hello, <br> the content on this page is still work in progress. Please excuse the poor writing and unformatted images.  <br>
-    - Matthew
-    </p>
-</div>
 
 ## Project Outline
 
@@ -102,16 +96,26 @@ But if it aint broke don't fix it, so we left ours in the stock configuration to
 
 Our team drew inspiration from Monty Python's 'The Holy Grail'. So naturally, our car was modelled after the fearsome [Rabbit of Caerbannog](https://en.wikipedia.org/wiki/Rabbit_of_Caerbannog). One 3D printed rabbit's head later, and we were sure to crush our foes.
 
-![finished rabbit]({{ site.baseurl }}/media/wacky_racer/car.jpg)
+<!-- ![finished rabbit]({{ site.baseurl }}/media/wacky_racer/car.jpg) -->
+
+<img src="{{ site.baseurl }}/media/wacky_racer/car.jpg" 
+    alt="Finished car"
+    style="display:block; max-width: 70%; margin: auto;">
+<figcaption>Our mighty racing rabbit</figcaption>
 
 For the controller - Arthur's crown, naturally - we laser cut some ribs and glued them onto a beanie. I wish I had an image of it with the LEDs on, but you'll have to trust that it was suitably majestic.
 
-![arthurs crown]({{ site.baseurl }}/media/wacky_racer/arthurs-crown.jpg)
+<!-- ![arthurs crown]({{ site.baseurl }}/media/wacky_racer/arthurs-crown.jpg) -->
+
+<img src="{{ site.baseurl }}/media/wacky_racer/arthurs-crown.jpg" 
+    alt="Hat Prop"
+    style="display:block; max-width: 70%; margin: auto;">
+<figcaption>The King's Crown.</figcaption>
 
 
 ## Results
 
-Our rabbit was a great success. I've embedded a showcase of the controls below, showing how the accelerometer on the hat controlled the speed of each motor.
+Our rabbit was a great success. I've embedded a showcase of the controls below, showing how the accelerometer on the hat controlled the speed of each motor. Also, we won the costume competition (the actually important part).
 
 <iframe width="100%" height="640" src="https://www.youtube.com/embed/OhbQdVrZ2IU?;&mute=1" frameborder="0" allowfullscreen> </iframe>
 
