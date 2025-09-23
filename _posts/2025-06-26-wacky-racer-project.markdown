@@ -92,7 +92,8 @@ We tried for a very compact layout, which did end up causing issues during debug
 # Software
 For the software, I implemented a real time task scheduler using the [RIOS](https://www.cs.ucr.edu/~vahid/rios/) system. This handy bit of code provides a great template for non-preemptive task-scheduling in pure C.
 
-I wrote almost all of the software myself, and I've provided a link to the files [here](https:)
+I wrote almost all of the software myself, and I've provided a link to the files [here](https://github.com/emjayking/portfolio/tree/gh-pages/media/wacky_racer/src)
+. The code I wrote is in the /apps/ directory, but I've included the driver files for context.
 
 # Mechanical
 Each team was given a base 'tank' to modify as they saw fit. 
