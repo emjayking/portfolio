@@ -28,35 +28,72 @@ students compete in teams of four to design, assemble and program a remote contr
 The car must be controlled by an accelerometer which the 'driver' wears on their head.
 Both the car and the hat must have certain components, including a SAM4s ARM microcontroller. 
 
-![system diagram]({{ site.baseurl }}/media/wacky_racer/wackyRacersSystemDiagram.png)
+<!-- ![system diagram]({{ site.baseurl }}/media/wacky_racer/wackyRacersSystemDiagram.png) -->
+
+<img src="{{ site.baseurl }}/media/wacky_racer/wackyRacersSystemDiagram.png" 
+    alt="System Diagram"
+    style="display:block; max-width: 70%; margin: auto;">
+<figcaption>System Diagram</figcaption>
    
 {% comment %} success criteria {% endcomment %}  
 A competition is held at the end of the semmester where the cars must compete to score the most laps within a given time frame.
 Bonus marks are awarded for 'dastardly features' which can be used to disable opponents.
 
-## Design
+# Design
 
-# Schematic
-I designed the embedded system for the hat, which is shown in the [schematics]({{ site.baseurl }}/media/wacky_racer/hat-schematic.pdf) below. 
+## Schematic
+I designed the embedded system for the hat, which is shown in the [schematics]({{ site.baseurl }}/media/wacky_racer/hat-schematic.pdf) below. My teammates designed the car peripherals, and the common components.
 
-- component detail
-- design considerations.
 
-![hat schematic page 1]({{ site.baseurl }}/media/wacky_racer/hat-schematic-page-1.png)
-![car schematic page 2]({{ site.baseurl }}/media/wacky_racer/hat-schematic-page-2.png)
+<!-- - component detail
+- design considerations. -->
 
-# PCB
+<!-- ![hat schematic page 1]({{ site.baseurl }}/media/wacky_racer/hat-schematic-page-1.png) -->
+
+<img src="{{ site.baseurl }}/media/wacky_racer/hat-schematic-page-1.png" 
+    alt="Hat Peripheral Diagram."
+    style="display:block; max-width: 70%; margin: auto;">
+<figcaption>Hat Peripherals</figcaption>
+<!-- 
+![car schematic page 2]({{ site.baseurl }}/media/wacky_racer/hat-schematic-page-2.png) -->
+<img src="{{ site.baseurl }}/media/wacky_racer/hat-schematic-page-2.png" 
+    alt="Common Components."
+    style="display:block; max-width: 70%; margin: auto;">
+<figcaption>Common Components</figcaption>
+
+## PCB
 The circuit board was designed in altium, and then we assembled the PCBs using pick and place machines. 
 We tried for a very compact layout, which did end up causing issues during debugging.
 
-![car pcb layout]({{ site.baseurl }}/media/wacky_racer/car-pcb-layout.png){: width="50%"}
+<!-- ![car pcb layout]({{ site.baseurl }}/media/wacky_racer/car-pcb-layout.png){: width="50%"} -->
 
-![car pcb]({{ site.baseurl }}/media/wacky_racer/car-pcb.jpg){: height="600"}
-![hat pcb]({{ site.baseurl }}/media/wacky_racer/hat-pcb.jpg){: height="600" }
+<img src="{{ site.baseurl }}/media/wacky_racer/car-pcb-layout.png" 
+    alt="PCB Layout"
+    style="display:block; max-width: 70%; margin: auto;">
+<figcaption>Car PCB Layout.</figcaption>
+
+<!-- ![car pcb]({{ site.baseurl }}/media/wacky_racer/car-pcb.jpg){: height="600"} -->
+
+<div 
+    Style="display: grid; grid-template-columns:auto auto;
+    column-gap: 1%;">
+
+<img src="{{ site.baseurl }}/media/wacky_racer/car-pcb.jpg" 
+    alt="Car PCB" style="margin: auto;">
+
+<img src="{{ site.baseurl }}/media/wacky_racer/hat-pcb.jpg" 
+    alt="Hat PCB" style="margin: auto;">
+
+</div>
+<figcaption><b>Left:</b> Car PCB <b>Right:</b> Hat PCB </figcaption>
+
+
 
 # Software
 For the software, I implemented a real time task scheduler using the [RIOS](https://www.cs.ucr.edu/~vahid/rios/) system. This handy bit of code provides a great template for non-preemptive task-scheduling in pure C.
-https://emjayking.github.io/portfolio/
+
+I wrote almost all of the software myself, and I've provided a link to the files [here](https:)
+
 # Mechanical
 Each team was given a base 'tank' to modify as they saw fit. 
 But if it aint broke don't fix it, so we left ours in the stock configuration to focus on what truly mattered
